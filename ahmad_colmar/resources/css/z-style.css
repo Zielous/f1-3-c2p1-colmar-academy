@@ -1,0 +1,858 @@
+/******
+
+    https://github.com/zielous/zielhacks
+    License: None (public domain)
+
+    --- ABOUT
+
+    This style sheet is designed to provide foundational common css selectors
+
+    --- INSTRUCTIONS
+
+    Load me immediately AFTER z-style.css
+    You MUST use this in conjunction with z-scaffold.css
+
+    --- TABLE OF CONTENTS
+
+    #section-global
+    #section-custom-fonts
+    #section-branding-colors
+    #section-buttons
+    #section-header
+    #section-banner
+    #section-articles
+    #section-courses
+    #section-thesis
+    #section-footer
+    #section-responsive-designs
+
+******/
+
+/*----------*\
+#SECTION-GLOBAL
+\*----------*/
+
+  html {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    color: darkgrey;
+  }
+
+  h1,
+  h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #2A4D6E;
+    margin: 2rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 1rem 1rem;
+  }
+
+  .limit--width {
+    /* margin on left and right */
+    width: 90%;
+  }
+
+  .fa {
+  }
+
+    .fa--tiny {
+      font-size: 0.7em;
+    }
+
+    .fa--color-primary {
+      color: #2A4D6E;
+    }
+
+    .fa--margin-left {
+      margin-left: 0.5em;
+    }
+
+      .fa--margin-right {
+      margin-right: 0.5em;
+    }
+
+
+
+
+
+/*----------*\
+#SECTION-CUSTOM-FONTS
+\*----------*/
+
+/*
+  Header: font-family: 'Oswald', sans-serif;
+  Body:   font-family: 'Quattrocento Sans', sans-serif;
+*/
+
+
+
+
+
+/*----------*\
+#SECTION-BRANDING-COLORS
+\*----------*/
+
+  /*
+    Color palette:;
+    http://paletton.com/#uid=53-0N0kllllaFw0g0qFqFg0w0aF
+
+    Primary:    #2A4D6E    Blue
+    Secondary:  #378B2E   Green
+
+  */
+
+  .color__primary, {
+    /* define website's primary color here for reference */
+    color: #2A4D6E;
+  }
+
+    .color__primary--bg-light {
+      background-color: #F3F8FD;
+    }
+
+    .color__primary--bg-dark {
+      background-color: #041E37;
+    }
+
+
+
+  .color__secondary, {
+    /* define website's secondary color here for reference */
+    color: #378B2E;
+  }
+
+    .color__secondary--bg-light {
+      background-color: #92D18B;
+    }
+
+    .color__secondary--bg-dark {
+      background-color: #074600;
+    }
+
+
+
+
+
+/*----------*\
+#SECTION-BUTTONS
+\*----------*/
+
+  button,
+  .button__primary,
+  .button__secondary
+   {
+    height: 3em;
+  }
+
+  button,
+  a,
+  .animated {
+    transition: all 200ms ease-in;
+  }
+
+  .button__primary,
+  .button__secondary {
+    border-radius: 5px;
+    border: 1px;
+    max-height: 100%;
+  }
+
+  /* button with primary color */
+  .button__primary {
+  }
+
+    .button__primary:hover {
+      background-color: #92D18B;
+      color: white;
+      border-bottom: 0.2em solid #074600;
+    }
+
+    .button__primary:active {
+      background-color: #074600;
+      border-bottom: 0;
+    }
+
+      /* call-to-action style button */
+      .button__cta {
+        border-radius: 5px;
+        border: 0;
+        color: white;
+        background-color: #378B2E;
+      }
+
+        .button__cta:hover {
+          color: #378B2E;
+        }
+
+        .button__cta:active {
+          color: white;
+        }
+
+
+  /* button with secondary color */
+  .button__secondary {
+    color: white;
+    background-color: #041E37;
+  }
+
+    .button__secondary:hover {
+      background-color: #92D18B;
+      color: white;
+      border-bottom: 0.2em solid #074600;
+    }
+
+    .button__secondary:active {
+      background-color: #074600;
+      border-bottom: 0;
+    }
+
+
+  .color__primary, {
+    /* define website's primary color here for reference */
+    color: #2A4D6E;
+  }
+
+    .color__primary--bg-light {
+      background-color: #F3F8FD;
+    }
+
+    .color__primary--bg-dark {
+      background-color: #041E37;
+    }
+
+
+
+
+  /* nav buttons to switch out icons */
+  .button__nav {
+    border-radius: 5px;
+    width: 30px;
+    max-height: auto;
+  }
+
+    .button__nav img:last-child {display:none;}
+    .button__nav:hover img:first-child {display:none;}
+    .button__nav:hover img:last-child {display:inline-block;}
+
+
+
+
+
+/*----------*\
+#SECTION-HEADER
+\*----------*/
+
+  .header {
+    /* floating header nav bar via header--float, z-index default 20 */
+    height: 4rem; /* 64px */
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    max-width: 470px;
+  }
+
+    .header .limit--height {
+      height: 2rem;
+    }
+
+      .header--below {
+        /* everything else below floating header nav bar */
+        padding-top: 4rem; /* height of nav bar */
+        max-width: 470px;
+      }
+
+    .header__nav {
+      width: 75%;
+      justify-content: space-between;
+    }
+
+      .header__nav a {
+        padding-top: 1rem;
+        padding-bottom: 0;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+        margin: 1rem 1rem;
+      }
+
+      .header__nav .login img {
+        margin-top: 4px;
+      }
+
+  .header .container__logo {
+      width: 25%;
+      justify-content: space-around;
+  }
+
+
+
+
+
+/*----------*\
+#SECTION-BANNER
+\*----------*/
+
+  .banner__area {
+    text-align: center;
+    padding-bottom: 2rem; /* 32px */
+  }
+
+    .banner__area img {
+      width: 100%;
+      height: auto; /* 11.25rem, 180px */
+    }
+
+    .banner__area p {
+      margin: 0 1rem;
+    }
+
+    .banner__area button {
+      font-size: 1.5rem;
+    }
+
+    .banner__area button {
+      margin-top: 1.5rem; /* 24px */
+    }
+
+  .banner__text {
+    display: block;
+  }
+
+
+
+
+
+/*----------*\
+#SECTION-ARTICLES
+\*----------*/
+
+  .content-box__container {
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+    .articles__sidebar-mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+  .content-box__content {
+    overflow: hidden;
+    margin-top: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px lightgrey;
+    background-color: #F3F8FD;
+  }
+
+  .article, h2 {
+    text-align: left;
+  }
+
+    .content-box__content img {
+      max-width: 100%;
+      max-height: 100%;
+      border-bottom: 5px solid #2A4D6E;
+    }
+
+    .content-box__content h2,
+    .content-box__content p,
+    .content-box__content button {
+      margin: 1rem 1rem;
+    }
+
+    .article button {
+      font-size: 1rem;
+    }
+
+    .article button {
+      width: 100%;
+      margin: 0 0;
+      border-radius: 0 0 5px 5px;
+    }
+
+
+
+
+
+
+/*----------*\
+#SECTION-COURSES
+\*----------*/
+
+  .courses {
+    padding: 2rem 0;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .course {
+    margin: 0 auto;
+    height: 100%;
+  }
+
+    .course__subtitle {
+      float: left;
+      opacity: 0;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .course__title {
+      color: white;
+      padding: 1rem 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0;
+      position: relative;
+      left: -5rem;
+      width: 100%;
+    }
+
+    .course__info ul {
+      text-align: left;
+      margin-left: 1.5rem;
+    }
+
+    .course__info {
+      /*initially hide course__info and children */
+      max-height: 0;
+      overflow: hidden;
+    }
+
+        .course:hover {
+        padding-bottom: 1rem;
+        transition-delay: 300ms;
+      }
+
+        .course:hover .course__info {
+          /* allow max-height so will cover the children when they are visible */
+          max-height: 30rem;
+        transition-delay: 300ms;
+        }
+
+        .course:hover .course__title {
+          margin-left: 150px;
+          transition-delay: 300ms;
+      }
+
+        .course:hover .course__subtitle {
+          opacity: 1;
+          transition-delay: 300ms;
+        }
+
+
+
+
+/*----------*\
+#SECTION-THESIS
+\*----------*/
+
+    .thesis-area .content-box__hero {
+      flex-wrap: wrap;
+    }
+
+    .thesis-area video {
+      width: 100%;
+      height: auto;
+    }
+
+    .thesis__title {
+      width: 100%;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+      .thesis__title h1 {
+        font-size: 2rem;
+        margin: 0 0;
+      }
+
+
+
+
+/*----------*\
+#SECTION-FOOTER
+\*----------*/
+
+  footer {
+    text-align: center;
+  }
+
+    .footer__line {
+      margin-top: 1.5rem;
+    }
+
+
+
+/*----------*\
+#SECTION-RESPONSIVE-DESIGNS
+\*----------*/
+
+  @media only screen
+    and (min-width: 470px) {
+    /* Selectors for tablet screens and bigger */
+
+    /*----------*\
+    #SECTION-HEADER-470px
+    \*----------*/
+
+      .header,
+      .header--below {
+        max-width: 100%;
+      }
+
+      .header__nav {
+        text-align: right;
+        font-size: 0.9rem;
+      }
+
+        .header__nav a {
+          margin-right: 1rem;
+          padding: 0.5rem 1rem;
+          color: #2A4D6E;
+          font-weight: bold;
+        }
+
+      .limit--width-desktop {
+          width: 100%;
+      }
+
+      .header .container__logo {
+        justify-content: flex-start;
+        width: 35%;
+      }
+
+        .logo__img {
+          margin-left: 0.5rem; /* 1rem already set by "a" at start */
+        }
+
+        .logo__text {
+          position: relative;
+          color: #2A4D6E;
+          bottom: 8px;
+          font-size: 1rem;
+        }
+
+        .logo__text:first-of-type {
+          font-weight: bold;
+          margin-left: 0.5rem;
+        }
+
+
+
+
+
+    /*----------*\
+    #SECTION-BANNER-470px
+    \*----------*/
+
+      .banner__area {
+        display: flex;
+        padding-top: 2rem;
+        align-items: center;
+      }
+
+        .banner__area img {
+          width: 60%;
+          margin-left: 1.5rem;
+          align-self: flex-start;
+          border-radius: 5px;
+          box-sizing: border-box;
+        }
+
+        .banner__text {
+          display: flex;
+          width: 423px;
+          margin-left: 2.5rem; /* 40px */
+          margin-right: 1.5rem;
+          align-items: center;
+          flex-direction: column;
+          box-sizing: border-box;
+        }
+
+          .banner__text h1,
+          .banner__text p {
+            text-align: left;
+          }
+
+          .banner__text h1 {
+            font-size: 2rem;
+          }
+
+        .banner__area button {
+          height: 44px;
+          padding: 8px 0;
+        }
+
+
+
+
+
+    /*----------*\
+    #SECTION-ARTICLES-470px
+    \*----------*/
+
+    .articles {
+      margin-top: 2rem;
+    }
+
+
+      .content-box__container {
+        padding-top: 0;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+        .content-box__sidebar {
+          display: flex;
+          box-sizing: border-box;
+          flex-direction: column;
+          width: 423px;
+          margin-right: 1rem;
+          margin-left: 1.5rem;
+          align-items: stretch;
+        }
+
+        .content-box__hero {
+          margin-left: 1.5rem;
+          /* margin-right: 1.5rem; */
+          width: 60%;
+          box-sizing: border-box;
+          text-align: left;
+        }
+
+          .content-box__hero h1 {
+            width: 100%;
+            margin-left: 0;
+            font-size: 2rem;
+          }
+
+          .content-box__hero img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 5px;
+          }
+
+          .content-box__hero h1 {
+            margin-bottom: 1.5rem;
+            text-align: left;
+          }
+
+          .articles .content-box__hero p:last-child {
+            margin-top: 3rem;
+            font-weight: bold;
+            color: black;
+          }
+
+          .content-box__content {
+            width: 100%;
+            height: 168px;
+            display: flex;
+            background-color: rgba(255,255,255,0);
+            border-radius: 0;
+            box-shadow: none;
+            overflow: visible;
+          }
+
+          .container__content {
+            width: 100%;
+          }
+
+          .content-box__content .container__img {
+            max-height: 90%;
+            max-width: 35%;
+            text-align: center;
+            box-sizing: border-box;
+            margin-top: 1rem;
+            margin-left: 1rem;
+          }
+
+          .content-box__container .content-box__content {
+            margin-top: 0;
+          }
+
+          .content-box__content .container__img img {
+            border-bottom: 0;
+            border-radius: 5px 0 0 10px;
+            border-right: 5px solid #2A4D6E;
+          }
+
+          .container__content button {
+            width: auto;
+            height: 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+          }
+
+
+
+
+    /*----------*\
+    #SECTION-COURSES-470px
+    \*----------*/
+
+      .courses {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+        .courses h1 {
+          padding-bottom: 1rem;
+          width: 100%;
+        }
+
+        .course__title,
+        .course__subtitle {
+          margin-top: 1rem;
+          padding-top: 0;
+          padding-right: 0;
+        }
+
+      .course {
+        width: 30%;
+        margin: 1rem 1rem;
+      }
+
+      .course__img {
+        overflow: hidden;
+      }
+
+        .course__img img {
+          width: 100%;
+          height: 100%;
+          border-radius: 5px 5px 0 0;
+        }
+
+      .course__info {
+        min-height: 7rem;
+        overflow: visible;
+        padding-bottom: 1rem;
+      }
+
+        .course:hover {
+        padding-bottom: 0;
+      }
+
+        .course:hover img {
+          opacity: 0.4;
+          transition-delay: 350ms;
+        }
+
+
+
+
+
+    /*----------*\
+    #SECTION-THESIS-470px
+    \*----------*/
+
+    .thesis__title h1 {
+      font-size: 3rem;
+    }
+
+    .container__content p {
+      text-align: left;
+    }
+
+
+
+
+
+    /*----------*\
+    #SECTION-THESIS-470px
+    \*----------*/
+
+    footer {
+      clear: both;
+    }
+
+      footer span {
+        margin-left: 1.5rem;
+        margin-right: 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: bold;
+      }
+
+      .float--left {
+        float: left;
+      }
+
+      .float--right {
+        float: right;
+      }
+
+      .footer__line hr {
+        margin-top: 2rem;
+        margin-bottom: 0;
+      }
+
+  }
+
+
+
+@media only screen
+  and (min-width: 1024px) {
+  /* Selectors for desktop screens and bigger */
+
+    /*----------*\
+    #SECTION-HEADER-1024px
+    \*----------*/
+
+    .xtra-wide-bg {
+      width: 100%;
+      background-color: black;
+      z-index: -1;
+      position: relative;
+    }
+
+    .logo__text {
+      position: relative;
+      color: #2A4D6E;
+      bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .header__nav {
+      font-size: 1rem;
+    }
+
+
+
+
+
+
+    /*----------*\
+    #SECTION-BELOW-HEADER-1024px
+    \*----------*/
+
+    .header--below {
+      /* everything else below floating header nav bar */
+      max-width: 64rem; /* 1024px */
+    }
+
+
+}

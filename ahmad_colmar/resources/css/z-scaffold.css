@@ -1,0 +1,256 @@
+/******
+
+    https://github.com/zielous/zielhacks
+    License: None (public domain)
+
+    --- ABOUT
+
+    This style sheet is designed to provide foundational common css selectors
+
+    --- INSTRUCTIONS
+
+    Load me AFTER reset.css but BEFORE z-style.css
+    You MUST use this in conjunction with z-style.css
+
+    Ideally contents of this file shouldn't be touched (as it's meant to be a scaffold, and instead built upon/edited via other stylesheets)
+
+    --- TABLE OF CONTENTS
+
+    #capitalisation
+    #containers
+    #responsive-visibility
+
+******/
+
+/*----------*\
+#CAPITALISATION
+\*----------*/
+
+  .caps__lower { text-transform: lowercase; } /* Everything not capitalised */
+
+  .caps__upper { text-transform: uppercase; } /* Everything capitalised */
+
+  .caps__first { text-transform: capitalize; } /* Capitalise first letter of each word */
+
+  .caps__none { text-transform: none; } /* Reset to original text as per HTML */
+
+  .caps__inherit { text-transform: inherit; } /* Copy parent capitalisation */
+
+
+
+
+
+/*----------*\
+#CONTAINERS
+\*----------*/
+
+  /**
+  *
+  * Designed to be used to quickly build up your HTML basic layout structure
+  * Use with z-visiborder.css to help visualise
+  *
+  * Style containers separately in other css files
+  *
+  **/
+
+  .container__block {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .container__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .header--float {
+    /* floating nav bar */
+    position: fixed;
+    z-index: 20;
+  }
+
+  .header--below {
+    /* everything below the floating nav bar */
+    position: relative;
+    margin: 0 auto;
+    max-width: 50em; /* default fallback width - for very wide screens */
+  }
+
+  .limit__width {
+    /* margin on left and right for child containers */
+    width: 95%;
+  }
+
+
+
+
+
+/*----------*\
+#RESPONSIVE-VISIBILITY
+\*----------*/
+
+  /**
+  *
+  * Initial setup for visibility selectors
+  * Combine multiple classes in HTML to be visible across multiple screen sizes
+  *
+  * Selectors below define initial visibility
+  *
+  **/
+
+  .display__mobile {
+    /* Only display for mobile */
+    display: flex;
+  }
+
+  .display__mobile-tablet {
+    /* Only display for mobile and tablet */
+    display: flex;
+  }
+
+  .display__tablet {
+    /* Only display for tablet */
+    display: flex;
+  }
+
+  .display__tablet-desktop {
+    /* Only display for tablet and desktop */
+    display: flex;
+  }
+
+  .display__desktop {
+    /* Only display for desktop and larger screens */
+    display: flex;
+  }
+
+
+
+
+
+/*----------*\
+#VISIBILITY-IN-MEDIA-QUERIES
+\*----------*/
+
+/**
+*
+* Mobile first philosophy, so break points
+* are designed for going to bigger screens
+*
+**/
+
+  @media only screen
+    and (max-width: 470px) {
+    /* Selectors for mobile screens only */
+
+    /**
+    * Selective visiblity
+    * These selectors show/hide the elements based on detected screen size
+    **/
+
+      .display__mobile {
+        /* Only display for mobile */
+        display: initial;
+      }
+
+      .display__mobile-tablet {
+        /* Only display for mobile and tablet */
+        display: initial;
+      }
+
+      .display__tablet {
+        /* Only display for tablet */
+        display: none;
+      }
+
+      .display__tablet-desktop {
+        /* Only display for tablet and desktop */
+        display: none;
+      }
+
+      .display__desktop {
+        /* Only display for desktop and larger screens */
+        display: none;
+      }
+
+  }
+
+  @media only screen
+    and (min-width: 470px) {
+    /* Selectors for tablet screens only */
+
+    /**
+    *
+    * Selective visiblity
+    * These selectors show/hide the elements based on detected screen size
+    *
+    **/
+
+      .display__mobile {
+        /* Only display for mobile */
+        display: none;
+      }
+
+      .display__mobile-tablet {
+        /* Only display for mobile and tablet */
+        display: initial;
+      }
+
+      .display__tablet {
+        /* Only display for tablet */
+        display: initial;
+      }
+
+      .display__tablet-desktop {
+        /* Only display for tablet and desktop */
+        display: initial;
+      }
+
+      .display__desktop {
+        /* Only display for desktop and larger screens */
+        display: none;
+      }
+
+  }
+
+
+  @media only screen
+    and (min-width: 1024px) {
+    /* Selectors for desktop and larger screens */
+
+    /**
+    *
+    * Selective visiblity
+    * These selectors show/hide the elements based on detected screen size
+    *
+    **/
+
+      .display__mobile {
+        /* Only display for mobile */
+        display: none;
+      }
+
+      .display__mobile-tablet {
+        /* Only display for mobile and tablet */
+        display: none;
+      }
+
+      .display__tablet {
+        /* Only display for tablet */
+        display: none;
+      }
+
+      .display__tablet-desktop {
+        /* Only display for tablet and desktop */
+        display: initial;
+      }
+
+      .display__desktop {
+        /* Only display for desktop and larger screens */
+        display: initial;
+      }
+
+  }
